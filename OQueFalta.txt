@@ -1,0 +1,9 @@
+O que falta:
+1- cross validation (nos modelos e no ensemble)
+2- comentarios (conclusoes em relacao as assumptions)
+3- relatorio
+
+Duvidas:
+1- querem acrescentar mais modelos de ensemble?
+2- como comparamos o logistic aos outros?
+3- AbaBoost nao tem OOB, como é que é suposto calcular para ele?
