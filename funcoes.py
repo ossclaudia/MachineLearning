@@ -58,29 +58,6 @@ def generate_datasets():
 
     return datasets
 
-# ------------------- Funcao do log loss -------------------
-
-def log_loss_function(probs, y):
-    eps = 1e-9 
-    return -np.mean(y * np.log(probs + eps) + (1 - y) * np.log(1 - probs + eps))
-
-# ------------------- Funcao da regressao logistica -------------------
-
-def logistic_regression(X, y, learning_rate=0.1, n_iterations=100):
-    m = X.shape[0]
-    X_b = np.c_[np.ones((m, 1)), X]  
-    theta = np.random.randn(X_b.shape[1], 1) 
-    
-    for _ in range(n_iterations):
-        z = X_b.dot(theta)
-        probs = 1 / (1 + np.exp(-z)) 
-        gradients = (1 / m) * X_b.T.dot(probs - y)
-        theta -= learning_rate * gradients
-    
-    log_loss = log_loss_function(probs, y)
-    
-    return theta, probs, log_loss
-
 # ------------------- Funcao da avaliacao dos modelos -------------------
 
 def evaluation(y,y_pred):
