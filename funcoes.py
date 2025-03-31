@@ -13,6 +13,16 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import roc_curve, roc_auc_score
 from sklearn import tree
 from matplotlib import pyplot as plt
+import pandas as pd
+from statsmodels.stats.outliers_influence import variance_inflation_factor
+
+# ------------------- Função para calcular multicolinearity -------------------
+
+def check_vif(X):
+    vif_data = pd.DataFrame()
+    vif_data["Feature"] = [f"Feature {i+1}" for i in range(X.shape[1])]
+    vif_data["VIF"] = [variance_inflation_factor(X, i) for i in range(X.shape[1])]
+    print(vif_data)
 
 # ------------------- Função para gerar os data sets -------------------
 
