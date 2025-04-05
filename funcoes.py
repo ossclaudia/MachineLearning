@@ -37,7 +37,7 @@ def generate_datasets():
     # 2. make_classification com mais instâncias
     X2, y2 = make_classification(n_samples=2000, n_features=2, n_classes=2, random_state=42, n_redundant=0,
                                 n_clusters_per_class=1, class_sep=2)
-    datasets.append((X2[:, :2], y2, "Make Classification with more instances"))
+    datasets.append((X2[:, :2], y2, "Make Classification with more instances (2000)"))
 
     # 3. make_classification com classes desbalanceadas (70/30)
     X3, y3 = make_classification(n_samples=500, n_features=2, n_classes=2, random_state=42, n_redundant=0,
